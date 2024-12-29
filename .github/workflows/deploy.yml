@@ -64,6 +64,10 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_HOST_KEY: ${{ secrets.SSH_HOST_KEY }}
+      - name: Debug
+        run: |
+          ls stage
+          echo "hello"
       - name: Deploy via SSH
 
       # ssh $REMOTE "chown -R lila-search:lila-search /home/lila-search && systemctl restart lila-search"
