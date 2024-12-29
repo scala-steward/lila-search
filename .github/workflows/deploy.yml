@@ -30,7 +30,7 @@ jobs:
       - run: sbt stage
       - uses: actions/upload-artifact@v4
         with:
-          name: lila-search
+          name: stage
           path: modules/app/target/universal/stage
 
   deploy-lila-search:
@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: lila-search
+          name: stage
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
@@ -67,5 +67,5 @@ jobs:
       - name: Deploy via SSH
 
       # ssh $REMOTE "chown -R lila-search:lila-search /home/lila-search && systemctl restart lila-search"
-        run: cat lila-search | ssh deploy-host "cat - > /home/lichess-search"
-      # run: cat lila-search | ssh deploy-host "cat - > /home/lila-search && chown -R lila-search:lila-search && systemctl restart lila-search"
+        run: cat stage | ssh deploy-host "ls && cat - > /home/lichess-search"
+      # run: cat stage | ssh deploy-host "cat - > /home/lila-search && chown -R lila-search:lila-search && systemctl restart lila-search"
