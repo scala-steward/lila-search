@@ -10,7 +10,7 @@ object Dependencies:
     val catsEffect = "3.7.0"
     val catsMtl = "1.7.0"
     val ciris = "3.15.0"
-    val chess = "17.15.7"
+    val chess = "17.16.0"
     val decline = "2.6.2"
     val elastic4s = "9.3.0"
     val fs2 = "3.13.0"
@@ -59,7 +59,7 @@ object Dependencies:
   val circe = "io.circe" %% "circe-core" % "0.14.16"
 
   val log4Cats = "org.typelevel" %% "log4cats-slf4j" % "2.8.0"
-  val logback = "ch.qos.logback" % "logback-classic" % "1.5.38"
+  val logback = "ch.qos.logback" % "logback-classic" % "1.6.1"
   val ducktape = "io.github.arainko" %% "ducktape" % "0.2.13"
 
   val otel4sCore = "org.typelevel" %% "otel4s-core" % V.otel4sCore
